@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+#homebg{
+	background-image: linear-gradient(to bottom right, white, #3a3838);
+	width: 100%;
+	height: 100%;
+}
+
+.left {
+ 	position:absolute;
+	top:15vw;
+	left:0vw;
+	height:20vw;
+	width: 42vw;
+	border-radius:0px 20px 20px 0px;
+}
+.right {
+    position:absolute;
+	top:15vw;
+	right:0vw;
+	height:20vw;
+	width: 42vw;
+	border-radius:20px 0px 0px 20px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+}
+#textbg{
+	background-color: rgba(58, 56, 56,0.4);
+	position: absolute;	
+	top: 24vw;
+  	left: 10vw;
+  	height:20vw;
+	width: 42vw;
+  
+  
+
+}
+.text1{
+  background-color: rgba(58, 56, 56,0.4);
+  height:20vw;
+	width: 42vw;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+ }
+ .text2{
+  text-align: center;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+ }
+
+ .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+</style>
+
+</head>
+<body>
+<div id="homebg">
+<div>
+	<a href="restaurant.html"><img class="left" src="rest1.jpg"></a>
+<div id="textbg">
+<div class="text1">
+		<h1>RESTAURANT</h1>
+
+</div>
+</div>
+</div>
+<div>
+	<a href="catagories.html"><img class="right" src="cat2.jpg"></a>
+	
+</div>
+<div class="text2">
+		<h1>CATOGRIES</h1>
+</div>
+</div>
+</body>
+</html>

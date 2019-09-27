@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "cart";
+}
+
+<h2>cart</h2>
+@{ TempData["d"] = ViewBag.values;}
+@using (Html.BeginForm("Order", "Restaurants", FormMethod.Post))
+{
+<table class="table">
+    <th>FoodName</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    @{int total = 0,count=0;}
+    @foreach (var item in (Dictionary<int, List<FoodOrder.Controllers.food>>)ViewBag.values)
+    {
+        foreach (var i in item.Value)
+        {
+            <tr>
+                <td>
+                    @i.foodname
+                    @{ count++;}
+                </td>
+                <td>
+                    @i.quantity
+                </td>
+                <td>
+                    @i.price
+                    @{total = total + i.price;}
+                </td>
+
+            </tr>
+            }
+                }
+    <tr>
+        <td>
+           Total Amount
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            @total
+        </td>
+
+    </tr>
+    
+</table>
+
+
+@Html.TextBox("Total", total, new { style =  "display:none" })
+@Html.TextBox("count", count, new { style = "display:none" })
+<input  type="submit" value="checkout" class="btn-primary" style="width:150px;height:30px;">
+}

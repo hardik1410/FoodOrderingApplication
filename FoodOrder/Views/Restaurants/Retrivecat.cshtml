@@ -1,0 +1,17 @@
+﻿<Center>
+<h4>CHOOSE YOUR CATEGORY.</h4>
+@{
+    FoodOrder.Models.FoodOrderModel fom = new FoodOrder.Models.FoodOrderModel();
+    var flist = fom.FCategory.ToList();
+    SelectList list = new SelectList(flist, "CategoryId", "CategoryName");
+    ViewBag.listname = list;
+}
+@using (Html.BeginForm("selectcat", "Restaurants", FormMethod.Post))
+{
+    @Html.DropDownList("flist", ViewBag.listname as SelectList, "select a Category", new { @class="form-control"})
+    <input id="one" value="Submit" type="submit" class="btn-primary" style="width:150px;height:30px;">
+    <br />
+    <br />
+    
+}
+</Center>

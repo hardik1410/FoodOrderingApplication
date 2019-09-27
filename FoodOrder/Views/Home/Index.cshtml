@@ -1,0 +1,30 @@
+﻿
+
+
+<div id="homebg" style="background-image: linear-gradient(to bottom right, white, #3a3838);
+	width: 100%;
+	height: 100%;">
+    <img id="mainlogo" src="../../food/logo.png">
+    <div>
+        <img class="left" src="../../food/rest1.jpg">
+        <a href="restaurant.html">
+            <div id="textbg">
+                <h1 id="text" style="color:white;">@Html.ActionLink("RESTAURANTS", "Retrive", "Restaurants",null, new { @style = "color:white;font-weight:bold;text-decoration:none;" })</h1>
+            </div>
+        </a>
+    </div>
+
+    <div>
+        <img class="right" src="../../food/cat2.jpg">
+        <a href="categories.html">
+            <div id="textbgright" style="right: 0vw;">
+                <h1 id="textright"  style="color:white;">@Html.ActionLink("CATEGORIES", "Retrivecat", "Restaurants",null, new { @style = "color:white;font-weight:bold;text-decoration:none;" } )</h1>
+            </div>
+        </a>
+    </div>
+
+    <div id="footer" style="position:absolute">
+        <p id="footertext">CHARCOAL | Sizzle your Taste Bud.</p>
+    </div>
+
+</div>

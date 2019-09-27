@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "order";
+}
+
+<h2>cart</h2>
+@using (Html.BeginForm("placed", "Restaurants", FormMethod.Post))
+{
+    <table class="table">
+        <th>Foodname</th>
+        <th>Price</th>
+        
+        @{int total = 0;}
+        @foreach (var item in (Dictionary<int, List<FoodOrder.Controllers.food>>)ViewBag.orders)
+    {
+        foreach (var i in item.Value)
+        {
+            <tr>
+                <td>
+                    @i.foodname
+                </td>
+                <td>
+                    @i.quantity
+                </td>
+
+
+                    @{total = total + i.price;}
+
+
+            </tr>
+            }
+     }
+        <tr>
+            <td>
+                No. of items : @TempData["c"]
+            </td>
+            
+            <td>
+               Total amount : @TempData["t"]
+            </td>
+
+        </tr>
+
+    </table>
+    
+    <textarea class="form-control"
+              id="address"
+              name="address"
+              rows="4"
+              cols="20">
+        enter your address..
+    </textarea>
+    <input type="submit" value="Place order" class="btn-primary" style="width:150px;height:30px;">
+ }

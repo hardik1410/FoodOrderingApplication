@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.hero-image{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../food/restaurant.jpg");
+  height: 80vh;
+  left:0px;
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  position: relative;
+
+}
+
+#customers {
+  position: absolute;
+  top:15vw;
+  left: 25vw;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr{background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #302f2f;
+    color: white;
+}
+#homebg{
+	background-image: linear-gradient(to bottom right, white, #3a3838);
+	width: 100%;
+	height: 100%;
+}
+
+.left {
+ 	position:absolute;
+	top:15vw;
+	left:0vw;
+	height:20vw;
+	width: 42vw;
+	border-radius:0px 20px 20px 0px;
+}
+.right {
+    position:absolute;
+	top:15vw;
+	right:0vw;
+	height:20vw;
+	width: 42vw;
+	border-radius:20px 0px 0px 20px;
+}
+#textbg{
+	background-color: rgba(58, 56, 56,0.4);
+	position: absolute;
+	top: 15vw;
+  	left: 0vw;
+  	height:20vw;
+	width: 42vw;
+	border-radius:0px 20px 20px 0px;
+}
+
+#text{
+	 font-family: 'Cinzel Decorative';
+	position: absolute;
+	top: 15vw;
+	left: 12.5vw;
+	color: white;
+}
+
+#textbgright{
+	background-color: rgba(58, 56, 56,0.4);
+	position: absolute;
+	top: 15vw;
+  	right: : 0vw;
+  	height:20vw;
+	width: 42vw;
+	border-radius:20px 0px 0px 20px ;
+}
+
+#textright{
+	 font-family: 'Cinzel Decorative';
+	position: absolute;
+	top: 15vw;
+	right: 12.5vw;
+	color: white;
+}
+
+#footer{
+	background-color: rgba(10,10,10,0.5);;
+	
+	top: 43.4vw;
+	left: 0vw;
+	width: 100%;
+	height: 4vw;
+}
+#mainlogo{
+	position: absolute;
+	top: 2vw;
+	left: 42.5vw;
+	width:15vw;
+}
+#footertext{
+	text-align: center;
+	color: white;
+	font-size: 1.1vw;
+	font-weight: bold;
+	font-family: 'Cinzel Decorative';
+}
+</style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Homefood", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Restaurants", "Retrive", "Restaurants")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="">
+        @RenderBody()
+        
+        
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

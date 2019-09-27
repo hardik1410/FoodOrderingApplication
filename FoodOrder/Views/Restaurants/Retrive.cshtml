@@ -1,0 +1,40 @@
+﻿<div class="hero-image">
+
+    @{
+        FoodOrder.Models.FoodOrderModel fom = new FoodOrder.Models.FoodOrderModel();
+        var flist = fom.Restaurant.ToList();
+        SelectList list = new SelectList(flist, "RId", "RName");
+        ViewBag.listname = list;
+    }
+
+    @using (Html.BeginForm("Category", "Restaurants", FormMethod.Post))
+    {
+        <center>@Html.DropDownList("flist", ViewBag.listname as SelectList, "select a restaurant", new { @class = "form-control" })</center>
+        <center>
+            <input id="one" value="Submit" type="submit" class="btn-primary" style="width:150px;height:30px;"></center>
+    <br />
+    <br />
+    <table id="customers">
+        <tr>
+            <th>NAME</th>
+            <th>LOCATION</th>
+            <th>CONTACT</th>
+            <th>TIMING</th>
+        </tr>
+        @foreach (var i in (List<FoodOrder.Controllers.Rest>)ViewBag.rest)
+                {
+            <tr>
+                <td>Name : @i.rname</td>
+                <td>Location : @i.loc</td>
+                <td>Contact : @i.contact</td>
+                <td>Timing : @i.time</td>
+
+            </tr>
+        }
+    </table>
+    }
+</div>
+
+    <div id="footer">
+        <p id="footertext">CHARCOAL | Sizzle your Taste Bud.</p>
+    </div>

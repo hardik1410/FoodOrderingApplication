@@ -1,0 +1,50 @@
+﻿@model FoodOrder.Models.ResCat
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ResCat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cat.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foodit.FoodName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foodit.FoodName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rest.RName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rest.RName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

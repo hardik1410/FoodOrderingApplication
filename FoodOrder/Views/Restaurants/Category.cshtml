@@ -1,0 +1,45 @@
+﻿<div style="text-align:center">
+@{ int c = 0; }
+@using (Html.BeginForm("cart", "Restaurants", FormMethod.Post))
+{
+
+
+    foreach (var i in (List<FoodOrder.Controllers.category>)ViewBag.category)
+    {
+        
+            <h3>@i.cname :</h3>
+        {
+            c = 0;
+        }
+        foreach (var item in (List<FoodOrder.Controllers.data>
+            )ViewBag.values)
+        {
+
+            if (i.cname == item.rname)
+            {
+                {
+                    c++;
+                }
+                <div class="one" style="display:inline-block">
+                    <h4>Name :    @item.fname</h4><br /><h4>Price : @item.price</h4><br /><h4>Quantity : @Html.TextBox(@item.fid.ToString(), 0)</h4><br />
+                </div>
+            }
+        }
+                    if (c == 0)
+                    {
+                        <h5>no food is available in this category</h5>
+                    }
+                
+            }
+
+    <input type="submit" value="Add to cart" class="btn-primary" style="width:250px;height:50px;"/>
+
+}
+</div>
+
+<div id="footer" style="display:block">
+    <p id="footertext">CHARCOAL | Sizzle your Taste Bud.</p>
+</div>
+
+
+

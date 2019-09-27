@@ -1,0 +1,17 @@
+﻿
+<center>
+    <h3>--SELECT YOUR RESTAURANT-- </h3>
+    <div class="a" style="font-size:large;font-weight:400">
+        @{
+            foreach (var item in (List<FoodOrder.Controllers.rcat>)ViewBag.restaurant)
+            {
+                @Html.ActionLink(@item.rname, "foods", "Restaurants", routeValues: new
+       {
+           id = @item.rid
+       }, htmlAttributes: null)
+                <br><br>
+
+            }
+        }
+    </div>
+</center>
